@@ -1,9 +1,8 @@
+import Foundation
+
 /**
  Сущность "Игра"
  */
-
-import Foundation
-
 
 protocol GameProtocol {
     //Количество заработанных очков
