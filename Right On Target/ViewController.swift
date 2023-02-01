@@ -1,15 +1,8 @@
-//
-//  ViewController.swift
-//  Right On Target
-//
-//  Created by Sergey Nikiforov on 20.01.2023.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
     
-    //создаем сущность "Game"
+    //создаем сущность "Игра"
     var game: Game!
     
     //элементы на сцене
@@ -21,10 +14,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Создаем экземпляр сущности "Game"
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
-        //записываем в лейбл загаданное в первый раз число
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        //Создаем генератор случайных чисел
+        let generator = NumberGenerator(startValue: 1, endValue: 50)!
+        //создаем сущность игра
+        game = Game(valueGenerator: generator, rounds: 5)
+        //Обновляем данные о текущем значении загаданного числа
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
     
     
@@ -33,7 +28,7 @@ class ViewController: UIViewController {
     //Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
         //высчитываем очки за раунд
-        game.calculateScore(with: Int(slider.value))
+        game.currentRound.calculateScore(with: Int(slider.value))
         //проверяем окончена ли игра
         if game.isGameEnded {
             showAlertWith(score: game.score)
@@ -43,7 +38,7 @@ class ViewController: UIViewController {
             game.startNewRound()
         }
         //Обновляем данные о текущем значении загаданного числа
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
     }
         
         
