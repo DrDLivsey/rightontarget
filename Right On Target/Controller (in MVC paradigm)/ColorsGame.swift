@@ -1,63 +1,25 @@
+//Контроллер в терминах MVC
+
 import UIKit
 
-extension UIColor {
-    public convenience init?(hex: String) {
-        let r, g, b, a: CGFloat
-
-        if hex.hasPrefix("#") {
-            let start = hex.index(hex.startIndex, offsetBy: 1)
-            let hexColor = String(hex[start...])
-
-            if hexColor.count == 6 {
-                let scanner = Scanner(string: hexColor)
-                var hexNumber: UInt64 = 0
-
-                if scanner.scanHexInt64(&hexNumber) {
-                    r = CGFloat((hexNumber & 0xff0000) >> 16) / 255
-                    g = CGFloat((hexNumber & 0x00ff00) >> 8) / 255
-                    b = CGFloat(hexNumber & 0x0000ff) / 255
-                    a = 255 / 255
-
-                    self.init(red: r, green: g, blue: b, alpha: a)
-                    return
-                }
-            }
-        }
-
-        return nil
-    }
-}
-
 class ColorsGame: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    func randomHexGenerator()->String{
-        var arrayString = ["#"]
-        let a = ["1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
-        for _ in 1...6 {
-            arrayString.append(a[Int.random(in: 1..<15)])
-        }
-        let resultString = arrayString.joined()
-        return resultString
-    }
     
     
+    // Объявляем(но не инициализиурем) экземпляр игры с цветами
+       var game: Game<SecretColorValue>!
+    
+    // номер "правильной" кнопки
+       var correctButtonTag: Int = 0
+    
+    // вспомогательное свойство, позволяющее работать с аутлетами кнопок, как с коллекцией
+      var buttonsCollection: [UIButton]!
     
     
-    
-    @IBAction func hideCurrentScene() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-
-    
-    
+    //элементы на сцене
+    // Текстовая метка для вывода HEX
     @IBOutlet weak var hexColorLabel: UILabel!
     
+    // Кнопки для выбора цвета
     @IBOutlet weak var buttonOption1: UIButton!
     @IBOutlet weak var buttonOption2: UIButton!
     @IBOutlet weak var buttonOption3: UIButton!
@@ -65,24 +27,80 @@ class ColorsGame: UIViewController {
     
     
     
-    @IBAction func option1() {
-        self.hexColorLabel.text = randomHexGenerator()
-        buttonOption1.backgroundColor = UIColor(hex: hexColorLabel.text ?? "0xff")
+    //MARK: Жизненный цикл
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //инициализируем значение для переменной класса Game через вызов функции фабрики
+        game = (GameFactory.getColorGame() as! Game<SecretColorValue>)
+                buttonsCollection = [buttonOption1, buttonOption2, buttonOption3, buttonOption4]
+                // Обновляем View
+                updateScene()
     }
     
-    @IBAction func option2() {
-        self.hexColorLabel.text = randomHexGenerator()
-        buttonOption2.backgroundColor = UIColor(hex: hexColorLabel.text ?? "0xff")
+    //Кнопка закрытия экрана = удаление View из Памяти
+    @IBAction func hideCurrentScene() {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func option3() {
-        self.hexColorLabel.text = randomHexGenerator()
-        buttonOption3.backgroundColor = UIColor(hex: hexColorLabel.text ?? "0xff")
-    }
+    private func updateScene() {
+            let secretColorString = game.secretValue.value.getByHEXString()
+            updateSecretColorLabel(withText: secretColorString)
+            updateButtons(withRightSecretValue: game.secretValue)
+        }
     
-    @IBAction func option4() {
-        self.hexColorLabel.text = randomHexGenerator()
-        buttonOption4.backgroundColor = UIColor(hex: hexColorLabel.text ?? "0xff")
-    }
+    
+    //MARK: Взаимодействие View - Model
+    
+    // Проверка выбранного пользователем цвета
+        @IBAction func compareValue(sender: UIButton) {
+            var userValue = game.secretValue
+            userValue.value = Color(from: sender.backgroundColor!)
+            game.calculateScore(secretValue: game.secretValue, userValue: userValue)
+            // Проверяем, окончена ли игра
+            if game.isGameEnded {
+                // Показываем окно с итогами
+                showAlertWith(score: game.score)
+                // Рестартуем игру
+                game.restartGame()
+            } else {
+                // Начинаем новый раунд игры
+                game.startNewRound()
+            }
+            updateScene()
+        }
+    
+    
+    //MARK: Обновление View
+    // Обновление текста загаданного цвета
+        private func updateSecretColorLabel(withText newHEXColorText: String ) {
+            hexColorLabel.text = "#\(newHEXColorText)"
+        }
+        
+        // Обновление фонового цвета кнопок
+        private func updateButtons(withRightSecretValue secretValue: SecretColorValue) {
+            // определяем, какая кнопка будет правильной
+            correctButtonTag = Array(1...4).randomElement()!
+            buttonsCollection.forEach { button in
+                if button.tag == correctButtonTag {
+                    button.backgroundColor = secretValue.value.getByUIColor()
+                } else {
+                    var copySecretValueForButton = secretValue
+                    copySecretValueForButton.setRandomValue()
+                    button.backgroundColor = copySecretValueForButton.value.getByUIColor()
+                }
+            }
+        }
+        
+        // Отображение всплывающего окна со счетом
+        private func showAlertWith( score: Int ) {
+            let alert = UIAlertController(
+                            title: "Игра окончена",
+                            message: "Вы заработали \(score) очков",
+                            preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Начать заново", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
 
-}
+    }

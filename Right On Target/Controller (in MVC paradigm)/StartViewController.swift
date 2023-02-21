@@ -1,3 +1,5 @@
+//Контроллер в терминах MVC
+
 import UIKit
 
 class StartViewController: UIViewController {

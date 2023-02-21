@@ -16,19 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите вариант игры" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deg-VF-gQG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите вариант игры" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deg-VF-gQG">
                                 <rect key="frame" x="295.66666666666669" y="182.33333333333334" width="261.00000000000006" height="28.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZX-jT-TCj">
-                                <rect key="frame" x="703.66666666666663" y="179" width="73" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Abp-0m-23r"/>
-                                </constraints>
+                                <rect key="frame" x="623.66666666666663" y="149.66666666666666" width="153" height="94"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Числа">
+                                <buttonConfiguration key="configuration" style="plain" image="numbersOption" title="Числа">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                     </backgroundConfiguration>
@@ -40,12 +37,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWJ-Ba-3WJ">
-                                <rect key="frame" x="77" y="179" width="71.666666666666686" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="IsH-mD-wgh"/>
-                                </constraints>
+                                <rect key="frame" x="76.999999999999986" y="149.66666666666666" width="151.66666666666663" height="94"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Цвета">
+                                <buttonConfiguration key="configuration" style="plain" image="colorsOption" title="Цвета" titleAlignment="trailing">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                     </backgroundConfiguration>
@@ -73,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecG-ww-hXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="428"/>
+            <point key="canvasLocation" x="132.3943661971831" y="426.71755725190837"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -135,7 +129,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="h3r-ke-OdF" id="Wde-I0-sDL"/>
+                        <outlet property="secretValueLabel" destination="h3r-ke-OdF" id="qH5-j3-cx0"/>
                         <outlet property="slider" destination="UIo-MO-cSC" id="VBn-ix-SEq"/>
                     </connections>
                 </viewController>
@@ -175,37 +169,37 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="option1" destination="vb7-m3-pVM" eventType="touchUpInside" id="aVy-Yl-yQq"/>
+                                    <action selector="compareValueWithSender:" destination="vb7-m3-pVM" eventType="touchUpInside" id="hsJ-9g-KOs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJw-ZP-9yT">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJw-ZP-9yT">
                                 <rect key="frame" x="193" y="244" width="106" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Вариант 2">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="option2" destination="vb7-m3-pVM" eventType="touchUpInside" id="Sgd-m1-bGa"/>
+                                    <action selector="compareValueWithSender:" destination="vb7-m3-pVM" eventType="touchUpInside" id="cme-Lz-jUj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAC-x2-Dyk">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAC-x2-Dyk">
                                 <rect key="frame" x="550" y="244" width="106" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Вариант 3">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="option3" destination="vb7-m3-pVM" eventType="touchUpInside" id="K1N-pJ-W5H"/>
+                                    <action selector="compareValueWithSender:" destination="vb7-m3-pVM" eventType="touchUpInside" id="SaG-99-50L"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmu-75-TBu">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmu-75-TBu">
                                 <rect key="frame" x="701" y="244" width="106" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Вариант 4">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="option4" destination="vb7-m3-pVM" eventType="touchUpInside" id="JZu-Wj-cF9"/>
+                                    <action selector="compareValueWithSender:" destination="vb7-m3-pVM" eventType="touchUpInside" id="Tjt-HA-Pjc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -244,6 +238,8 @@
     <resources>
         <image name="01.square.fill" catalog="system" width="128" height="114"/>
         <image name="50.square.fill" catalog="system" width="128" height="114"/>
+        <image name="colorsOption" width="80" height="80"/>
+        <image name="numbersOption" width="80" height="80"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
