@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rbg-mG-2JQ">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="rDc-fN-bYP">
+            <objects>
+                <viewController id="rbg-mG-2JQ" customClass="StartViewController" customModule="Right_On_Target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ifA-Fb-Tn5">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите вариант игры" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deg-VF-gQG">
+                                <rect key="frame" x="295.66666666666669" y="182.33333333333334" width="261.00000000000006" height="28.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZX-jT-TCj">
+                                <rect key="frame" x="703.66666666666663" y="179" width="73" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Abp-0m-23r"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Числа">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showNumberGameScreen" destination="rbg-mG-2JQ" eventType="touchUpInside" id="kN0-21-ec8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWJ-Ba-3WJ">
+                                <rect key="frame" x="77" y="179" width="71.666666666666686" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="IsH-mD-wgh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Цвета">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showColorsGameScreen" destination="rbg-mG-2JQ" eventType="touchUpInside" id="0Oo-LK-pFZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7QH-s6-qvf"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="deg-VF-gQG" firstAttribute="centerY" secondItem="ifA-Fb-Tn5" secondAttribute="centerY" id="8IA-Dh-obm"/>
+                            <constraint firstItem="tWJ-Ba-3WJ" firstAttribute="leading" secondItem="7QH-s6-qvf" secondAttribute="leading" constant="77" id="Oq1-fI-OA8"/>
+                            <constraint firstItem="deg-VF-gQG" firstAttribute="centerX" secondItem="ifA-Fb-Tn5" secondAttribute="centerX" id="cOZ-qy-du9"/>
+                            <constraint firstItem="bZX-jT-TCj" firstAttribute="centerY" secondItem="deg-VF-gQG" secondAttribute="centerY" id="hkA-dK-dUd"/>
+                            <constraint firstItem="bZX-jT-TCj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="deg-VF-gQG" secondAttribute="trailing" constant="8" symbolic="YES" id="jou-Ar-qrl"/>
+                            <constraint firstItem="7QH-s6-qvf" firstAttribute="trailing" secondItem="bZX-jT-TCj" secondAttribute="trailing" constant="75.5" id="vPi-2r-NaL"/>
+                            <constraint firstItem="tWJ-Ba-3WJ" firstAttribute="centerY" secondItem="ifA-Fb-Tn5" secondAttribute="centerY" id="xGW-Po-AdA"/>
+                            <constraint firstItem="deg-VF-gQG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tWJ-Ba-3WJ" secondAttribute="trailing" constant="8" symbolic="YES" id="zlw-LW-8VA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecG-ww-hXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Right_On_Target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="50" minimumValueImage="01.square.fill" catalog="system" maximumValueImage="50.square.fill" translatesAutoresizingMaskIntoConstraints="NO" id="UIo-MO-cSC">
+                                <rect key="frame" x="58" y="181.66666666666666" width="736" height="31"/>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <color key="minimumTrackTintColor" systemColor="systemPinkColor"/>
+                                <color key="maximumTrackTintColor" systemColor="labelColor"/>
+                                <color key="thumbTintColor" systemColor="systemPinkColor"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3r-ke-OdF">
+                                <rect key="frame" x="421" y="309.66666666666669" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bem-Sm-q9e">
+                                <rect key="frame" x="360" y="241.66666666666663" width="132" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Проверить">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="checkNumber" destination="BYZ-38-t0r" eventType="touchUpInside" id="pQM-RV-Ydj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kR-OF-PO6">
+                                <rect key="frame" x="30.000000000000007" y="79" width="73.666666666666686" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="qYo-1g-Hxu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Назад"/>
+                                <connections>
+                                    <action selector="hideCurrentScene" destination="BYZ-38-t0r" eventType="touchUpInside" id="l42-zr-OKu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="7kR-OF-PO6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="2ze-Il-znD"/>
+                            <constraint firstItem="7kR-OF-PO6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="4C6-cm-HlS"/>
+                            <constraint firstItem="UIo-MO-cSC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-60" id="L1Z-WK-uoD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7kR-OF-PO6" secondAttribute="trailing" symbolic="YES" id="QaB-uZ-iQk"/>
+                            <constraint firstItem="Bem-Sm-q9e" firstAttribute="top" secondItem="UIo-MO-cSC" secondAttribute="bottom" constant="30" id="T23-MK-opd"/>
+                            <constraint firstItem="UIo-MO-cSC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bN0-g9-5yO"/>
+                            <constraint firstItem="Bem-Sm-q9e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bcn-Cj-gTl"/>
+                            <constraint firstItem="UIo-MO-cSC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="bda-2A-nfT"/>
+                            <constraint firstItem="h3r-ke-OdF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hQi-30-9ow"/>
+                            <constraint firstItem="h3r-ke-OdF" firstAttribute="top" secondItem="Bem-Sm-q9e" secondAttribute="bottom" constant="30" id="vHH-YQ-2cz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="h3r-ke-OdF" id="Wde-I0-sDL"/>
+                        <outlet property="slider" destination="UIo-MO-cSC" id="VBn-ix-SEq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.73239436619724" y="9.9236641221374047"/>
+        </scene>
+        <!--ColorsGame-->
+        <scene sceneID="lRh-nx-oQc">
+            <objects>
+                <viewController storyboardIdentifier="ColorsGame" id="vb7-m3-pVM" userLabel="ColorsGame" customClass="ColorsGame" customModule="Right_On_Target" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gu1-eO-eXy">
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxw-Ah-dDq">
+                                <rect key="frame" x="30.000000000000007" y="79" width="73.666666666666686" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Назад"/>
+                                <connections>
+                                    <action selector="hideCurrentScene" destination="vb7-m3-pVM" eventType="touchUpInside" id="gx0-Bk-4rC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут будет показан HEX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ml-hO-ErS">
+                                <rect key="frame" x="335" y="179" width="182" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Jek-MP-aCc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCI-Au-HvH">
+                                <rect key="frame" x="45" y="244" width="103" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Вариант 1">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="option1" destination="vb7-m3-pVM" eventType="touchUpInside" id="aVy-Yl-yQq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJw-ZP-9yT">
+                                <rect key="frame" x="193" y="244" width="106" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Вариант 2">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="option2" destination="vb7-m3-pVM" eventType="touchUpInside" id="Sgd-m1-bGa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAC-x2-Dyk">
+                                <rect key="frame" x="550" y="244" width="106" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Вариант 3">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="option3" destination="vb7-m3-pVM" eventType="touchUpInside" id="K1N-pJ-W5H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmu-75-TBu">
+                                <rect key="frame" x="701" y="244" width="106" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Вариант 4">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="option4" destination="vb7-m3-pVM" eventType="touchUpInside" id="JZu-Wj-cF9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pUV-O3-Jc7"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <constraints>
+                            <constraint firstItem="mxw-Ah-dDq" firstAttribute="top" secondItem="pUV-O3-Jc7" secondAttribute="top" constant="20" id="6yg-YV-fc2"/>
+                            <constraint firstItem="2ml-hO-ErS" firstAttribute="centerX" secondItem="gu1-eO-eXy" secondAttribute="centerX" id="9Fj-Mj-VmN"/>
+                            <constraint firstItem="HAC-x2-Dyk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hJw-ZP-9yT" secondAttribute="trailing" constant="8" symbolic="YES" id="Aly-HS-yIr"/>
+                            <constraint firstItem="HAC-x2-Dyk" firstAttribute="centerY" secondItem="rCI-Au-HvH" secondAttribute="centerY" id="B6J-Ka-bo7"/>
+                            <constraint firstItem="pUV-O3-Jc7" firstAttribute="bottom" secondItem="rCI-Au-HvH" secondAttribute="bottom" constant="80" id="G0J-BY-Mxy"/>
+                            <constraint firstItem="2ml-hO-ErS" firstAttribute="top" secondItem="pUV-O3-Jc7" secondAttribute="top" constant="120" id="Qpv-Bb-pVb"/>
+                            <constraint firstItem="pmu-75-TBu" firstAttribute="leading" secondItem="HAC-x2-Dyk" secondAttribute="trailing" constant="45" id="Qrk-23-tfQ"/>
+                            <constraint firstItem="pmu-75-TBu" firstAttribute="centerY" secondItem="rCI-Au-HvH" secondAttribute="centerY" id="REA-Ym-0e0"/>
+                            <constraint firstItem="hJw-ZP-9yT" firstAttribute="leading" secondItem="rCI-Au-HvH" secondAttribute="trailing" constant="45" id="URR-ce-HBo"/>
+                            <constraint firstItem="rCI-Au-HvH" firstAttribute="leading" secondItem="pUV-O3-Jc7" secondAttribute="leading" constant="45" id="c1z-0f-PT5"/>
+                            <constraint firstItem="pUV-O3-Jc7" firstAttribute="trailing" secondItem="pmu-75-TBu" secondAttribute="trailing" constant="45" id="jzg-IB-5pX"/>
+                            <constraint firstItem="hJw-ZP-9yT" firstAttribute="centerY" secondItem="rCI-Au-HvH" secondAttribute="centerY" id="pPe-9R-o8r"/>
+                            <constraint firstItem="pUV-O3-Jc7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mxw-Ah-dDq" secondAttribute="trailing" symbolic="YES" id="uFF-Im-Tmr"/>
+                            <constraint firstItem="mxw-Ah-dDq" firstAttribute="leading" secondItem="pUV-O3-Jc7" secondAttribute="leading" constant="30" id="z1l-QK-dox"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonOption1" destination="rCI-Au-HvH" id="eqC-nP-ojK"/>
+                        <outlet property="buttonOption2" destination="hJw-ZP-9yT" id="lQq-Ei-6q4"/>
+                        <outlet property="buttonOption3" destination="HAC-x2-Dyk" id="hGp-C5-gam"/>
+                        <outlet property="buttonOption4" destination="pmu-75-TBu" id="fBH-cv-C9b"/>
+                        <outlet property="hexColorLabel" destination="2ml-hO-ErS" id="KQV-nx-fkG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pek-bn-1M0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="1149"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="01.square.fill" catalog="system" width="128" height="114"/>
+        <image name="50.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

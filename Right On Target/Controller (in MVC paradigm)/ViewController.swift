@@ -1,3 +1,5 @@
+//Контроллер в терминах MVC
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -20,6 +22,10 @@ class ViewController: UIViewController {
         game = Game(valueGenerator: generator, rounds: 5)
         //Обновляем данные о текущем значении загаданного числа
         updateLabelWithSecretNumber(newText: String(game.currentRound.currentSecretValue))
+    }
+    
+    @IBAction func hideCurrentScene() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
